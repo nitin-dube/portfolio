@@ -2,7 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
-body, html {
+html {
+  scroll-behavior: smooth;
+}
+
+/* Respect user's motion preference for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body,
+html {
   font-family: 'Inter', Arial, sans-serif;
   font-size: 18px;
   font-weight: 400;
@@ -12,7 +32,9 @@ body, html {
   min-height: 100vh;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: 'Montserrat', 'Inter', Arial, sans-serif;
   font-weight: 800;
   letter-spacing: -0.02em;
@@ -24,18 +46,22 @@ h1 {
   margin-bottom: 0.7em;
   line-height: 1.1;
 }
+
 h2 {
   font-size: 2.2rem;
   margin-bottom: 0.5em;
   line-height: 1.15;
 }
+
 h3 {
   font-size: 1.5rem;
   margin-bottom: 0.4em;
   line-height: 1.2;
 }
 
-code, pre, .font-mono {
+code,
+pre,
+.font-mono {
   font-family: 'Fira Mono', 'Menlo', 'Monaco', 'Consolas', monospace;
   font-size: 1em;
   color: #38bdf8;
@@ -44,18 +70,26 @@ code, pre, .font-mono {
 .font-sans {
   font-family: 'Inter', Arial, sans-serif;
 }
+
 .font-heading {
   font-family: 'Montserrat', 'Inter', Arial, sans-serif;
 }
+
 .font-mono {
   font-family: 'Fira Mono', 'Menlo', 'Monaco', 'Consolas', monospace;
 }
 
 /* Animated gradient text */
 @keyframes gradient-move {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 100% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
+  }
 }
+
 .animate-gradient-text {
   animation: gradient-move 3s linear infinite alternate;
   background-size: 200% 200%;
@@ -63,9 +97,15 @@ code, pre, .font-mono {
 
 /* Typewriter effect */
 @keyframes typewriter {
-  from { width: 0; }
-  to { width: 100%; }
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
 }
+
 .animate-typewriter {
   display: inline-block;
   overflow: hidden;
@@ -81,9 +121,15 @@ code, pre, .font-mono {
 
 /* Animated gradient for subtitle */
 @keyframes gradient-move-subtitle {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 100% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
+  }
 }
+
 .animate-gradient-subtitle {
   animation: gradient-move-subtitle 3s linear infinite alternate;
   background-size: 200% 200%;
@@ -91,12 +137,20 @@ code, pre, .font-mono {
 
 /* Fade-in and slide-up animation */
 @keyframes fadeInUp {
-  0% { opacity: 0; transform: translateY(32px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
+
 .animate-fade-in-up {
   opacity: 0;
-  animation: fadeInUp 0.7s cubic-bezier(0.4,0.2,0.2,1) forwards;
+  animation: fadeInUp 0.7s cubic-bezier(0.4, 0.2, 0.2, 1) forwards;
 }
 
 /* Consistent card shadow and hover for all cards */
@@ -106,6 +160,7 @@ code, pre, .font-mono {
   background: #1e293b;
   padding: 1.5rem 1.25rem;
 }
+
 .card-animate:hover {
   background: #334155;
 }
@@ -117,23 +172,39 @@ code, pre, .font-mono {
   font-weight: 700;
   letter-spacing: 0.01em;
   background: linear-gradient(90deg, #06b6d4 0%, #2563eb 100%);
-  box-shadow: 0 2px 8px 0 rgba(6,182,212,0.10);
+  box-shadow: 0 2px 8px 0 rgba(6, 182, 212, 0.10);
 }
+
 .button-animate:hover {
-  box-shadow: 0 6px 24px 0 rgba(6,182,212,0.18);
+  box-shadow: 0 6px 24px 0 rgba(6, 182, 212, 0.18);
   transform: scale(1.06);
   background: linear-gradient(90deg, #2563eb 0%, #06b6d4 100%);
 }
 
 /* Staggered animation delays */
-.stagger-1 { animation-delay: 0.1s; }
-.stagger-2 { animation-delay: 0.2s; }
-.stagger-3 { animation-delay: 0.3s; }
-.stagger-4 { animation-delay: 0.4s; }
-.stagger-5 { animation-delay: 0.5s; }
-.stagger-6 { animation-delay: 0.6s; }
-.stagger-7 { animation-delay: 0.7s; }
-.stagger-8 { animation-delay: 0.8s; }
+.stagger-1 {
+  animation-delay: 0.1s;
+}
+
+.stagger-2 {
+  animation-delay: 0.2s;
+}
+
+.stagger-3 {
+  animation-delay: 0.3s;
+}
+
+.stagger-4 {
+  animation-delay: 0.4s;
+}
+
+.stagger-5 {
+  animation-delay: 0.5s;
+}
+
+.stagger-6 {
+  animation-delay: 0.6s;
+}
 
 /* Animated gradient divider */
 .animated-divider {
@@ -145,23 +216,38 @@ code, pre, .font-mono {
   margin: 2.5rem 0;
   animation: gradient-move-divider 4s linear infinite alternate;
 }
+
 @keyframes gradient-move-divider {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 100% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
+  }
 }
 
 /* Soft animated background accent */
 .animated-bg-accent {
   position: fixed;
-  top: 0; left: 0; width: 100vw; height: 100vh;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   z-index: 0;
   pointer-events: none;
-  background: radial-gradient(ellipse 60% 40% at 70% 20%, rgba(56,189,248,0.10) 0%, rgba(16,23,42,0.95) 100%);
+  background: radial-gradient(ellipse 60% 40% at 70% 20%, rgba(56, 189, 248, 0.10) 0%, rgba(16, 23, 42, 0.95) 100%);
   animation: bg-accent-move 18s linear infinite alternate;
 }
+
 @keyframes bg-accent-move {
-  0% { background-position: 0% 0%; }
-  100% { background-position: 100% 100%; }
+  0% {
+    background-position: 0% 0%;
+  }
+
+  100% {
+    background-position: 100% 100%;
+  }
 }
 
 /* Social icon hover */
@@ -170,14 +256,16 @@ code, pre, .font-mono {
   background: #1e293b;
   color: #38bdf8;
 }
+
 .social-icon:hover {
   background: #06b6d4 !important;
   color: #fff !important;
-  box-shadow: 0 4px 16px 0 rgba(6,182,212,0.15);
+  box-shadow: 0 4px 16px 0 rgba(6, 182, 212, 0.15);
 }
 
 /* Improved focus state for buttons/links */
-.button-animate:focus, a:focus {
+.button-animate:focus,
+a:focus {
   outline: 2px solid #60a5fa;
   outline-offset: 2px;
 }
@@ -188,6 +276,7 @@ section {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
+
 section:not(:last-child) {
   border-bottom: 1.5px dashed #334155;
 }
@@ -218,16 +307,24 @@ section:not(:last-child)::after {
   font-family: 'Inter', Arial, sans-serif;
   animation: cover-typewriter-anim 3.2s steps(38, end) 0.5s 1 normal both;
 }
+
 @keyframes cover-typewriter-anim {
-  from { width: 0; }
-  to { width: 100%; }
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
 }
+
 .cover-typewriter {
   /* After animation, keep the bar at the end */
   animation-fill-mode: forwards;
 }
 
-input, textarea {
+input,
+textarea {
   font-family: 'Inter', Arial, sans-serif;
   font-size: 1.1rem;
 }
@@ -236,6 +333,7 @@ input, textarea {
   width: 10px;
   background: #1e293b;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #334155;
   border-radius: 8px;
