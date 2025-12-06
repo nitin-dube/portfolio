@@ -1,0 +1,14 @@
+{
+    "extends": [
+        "react-app"
+    ],
+    "ignorePatterns": [
+        "build/",
+        "node_modules/"
+    ],
+    "rules": {
+        "no-var": "error",
+        "prefer-const": "warn",
+        "no-inner-declarations": "warn"
+    }
+}
