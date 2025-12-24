@@ -24,7 +24,7 @@ const ProjectsSection = () => {
             ],
             impact: [
                 { metric: '87%', label: 'Faster attendance marking' },
-                { metric: '500+', label: 'Active students' },
+                { metric: '50+', label: 'Active students' },
                 { metric: '40hrs', label: 'Saved per month' },
             ],
             link: null,
