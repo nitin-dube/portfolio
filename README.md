@@ -2,7 +2,7 @@
 
 A premium, interactive portfolio website built with modern web technologies to showcase development skills, projects, and professional experience.
 
-![Portfolio Preview](public/logo192.png)
+![Portfolio Preview]:https://nitindubey-portfolio.vercel.app/
 
 ## 🚀 Key Features
 
